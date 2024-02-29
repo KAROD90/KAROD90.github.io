@@ -1,24 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme } from "./Utils/Themes";
+import Navbar from "./Components/Navbar";
+import { BrowserRouter } from "react-router-dom";
+import Hero from "./Components/Sections/Hero";
+import Skills from "./Components/Sections/Skills";
+import StarCanvas from "./Components/Canvas/Stars";
+import { AnimatePresence } from "framer-motion";
+import Education from "./Components/Sections/Education";
+import Experience from "./Components/Sections/Experience";
+import Projects from "./Components/Sections/Projects";
+import Footer from "./Components/Sections/Footer";
+import ProjectDetails from "./Components/Dialog/ProjectDetails";
+import { useState } from "react";
+
+const Body = styled.div`
+  background-color: ${({ theme }) => theme.bg};
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+`;
+
+const Wrapper = styled.div`
+  padding-bottom: 100px;
+  background: linear-gradient(
+      38.73deg,
+      rgba(204, 0, 187, 0.15) 0%,
+      rgba(201, 32, 184, 0) 50%
+    ),
+    linear-gradient(
+      141.27deg,
+      rgba(0, 70, 209, 0) 50%,
+      rgba(0, 70, 209, 0.15) 100%
+    );
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
+`;
 
 function App() {
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <BrowserRouter>
+        <Navbar />
+        <Body>
+          <StarCanvas />
+          <AnimatePresence>
+            <div>
+              <Hero />
+              <Wrapper>
+                <Skills />
+                <Experience />
+              </Wrapper>
+              <Projects openModal={openModal} setOpenModal={setOpenModal} />
+              <Wrapper>
+                <Education />
+              </Wrapper>
+              <Footer />
+              {openModal.state && (
+                <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
+              )}
+            </div>
+          </AnimatePresence>
+        </Body>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
