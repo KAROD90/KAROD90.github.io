@@ -6,6 +6,7 @@ Welcome to my digital portfolio! This project showcases my skills, projects, and
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
+- [Notes](#notes)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,14 +14,18 @@ Welcome to my digital portfolio! This project showcases my skills, projects, and
 - [License](#license)
 
 ## Introduction
-My Portfolio is a React.js application that serves as an online portfolio to showcase my work, skills, and achievements. It provides an overview of my background, displays my projects, and offers a way to contact me.
+My digital Portfolio is a React.js application that serves as an online portfolio to showcase my work, skills, and experience.
 
 ## Features
 - About Me: An overview of my background, skills, and experiences.
-- Projects: A collection of my notable projects with descriptions, screenshots, and links.
-- Skills: A list of my technical skills and proficiencies.
+- Projects: Coming Soon...
+- Skills: A list of my technical skills.
 - Resume: A link to download my resume.
-- Contact: A form to send me messages or inquiries.
+
+## Notes
+- This repository consists of two branches: 
+    - `master` - the _source code_ of the React app
+    - `gh-pages` - the React app _built from_ that source code
 
 ## Technologies Used
 - React.js: A JavaScript library for building user interfaces.
