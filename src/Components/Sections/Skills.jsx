@@ -125,7 +125,7 @@ const Skills = () => {
         <Title>Skills</Title>
         <Desc>
           Here is an overview of the skills I have been cultivating over the past three years.
-          While some, like C#, React, and Material UI, are relatively new to me, I am committed to continuous learning and skill development.
+          I am working on mastery of JavaScript, React, Material UI, and C# as I am committed to continuous learning and skill development.
         </Desc>
         <SkillsContainer>
           {skills.map((skill, index) => (
